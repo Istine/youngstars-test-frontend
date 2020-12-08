@@ -23,6 +23,10 @@ $background-color: white;
     left: 100%;
     top: -40%;
     transform: translate(-50%) rotate(150deg);
+
+    @media screen and (max-width:$mobile_screen) {
+      display: none;
+    }
   }
 
   .small-circle {
@@ -36,6 +40,9 @@ $background-color: white;
     z-index: 2;
     opacity: 0.7;
     transform: translate(-50%);
+    @media screen and (max-width:$mobile_screen) {
+      display: none;
+    }
   }
 
   .login-form-container {
