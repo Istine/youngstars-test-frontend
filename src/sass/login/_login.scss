@@ -59,11 +59,15 @@ $background-color: white;
         color:#777;
         text-align: center;
         font-family: "Poppins", sans-serif;
+        
       }
     }
 
     form {
       width: 300px;
+      @media screen and (max-width:$smaller_screens) {
+       width: 270px;
+      }
       height: auto;
       display: flex;
       flex-direction: column;
@@ -79,23 +83,32 @@ $background-color: white;
           box-sizing: border-box;
           margin: 10px 0;
           border: none;
+          font-weight: bold;
+          font-size: 14px;
           border-bottom: 2px solid #eee;
           padding: 10px;
           color: #444;
           outline: none;
+          @media screen and (max-width:$smaller_screens) {
+            font-size: small;
+          }   
 
           &:focus ~ label {
             top: -13px;
+            font-size: 9px;
             color: #789db3;
           }
         }
         label {
-          top: 30%;
+          top: 0;
           font-family: "Poppins", sans-serif;
           color: #555;
           font-size: 15px;
           position: absolute;
           transition: all 500ms ease;
+          @media screen and (max-width:$smaller_screens) {
+            font-size: small;
+          }
         }
       }
       button {
