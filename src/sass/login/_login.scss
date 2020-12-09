@@ -63,6 +63,20 @@ $background-color: white;
       }
     }
 
+    p {
+      font-size: medium;
+      color: #777;
+      font-family: "Poppins", sans-serif;
+      margin: 10px 0;
+
+      a {
+        color: #407492;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+
     form {
       width: 300px;
       @media screen and (max-width:$smaller_screens) {
@@ -70,6 +84,7 @@ $background-color: white;
       }
       height: auto;
       display: flex;
+      margin-top: 20px;
       flex-direction: column;
       .input-box {
         width: 100%;
