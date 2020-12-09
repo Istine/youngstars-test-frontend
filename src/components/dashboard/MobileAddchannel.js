@@ -7,7 +7,7 @@ import Dog from "../../imgs/dog.png";
 import { connect, useDispatch } from "react-redux";
 import { get_my_channels } from "../../redux/actions";
 //<a href='https://pngtree.com/so/care'>care png from pngtree.com</a>
-function RightPanel({ my_channels, get_my_channels }) {
+function MobileAddchannel({ my_channels, get_my_channels }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(get_my_channels());
@@ -27,11 +27,7 @@ function RightPanel({ my_channels, get_my_channels }) {
   };
 
   return (
-    <div className="right-panel">
-      <div className="board">
-        <img src={Care} alt="care" />
-      </div>
-      <div className="second-board">
+      <div className="second-board-two">
         <h3>My Channels</h3>
         <ul>
           {my_channels[0] !== "Something went wrong." ? my_channels.map((channel) => (
@@ -47,7 +43,6 @@ function RightPanel({ my_channels, get_my_channels }) {
         </label> }
         </ul>
       </div>
-    </div>
   );
 }
 
@@ -55,4 +50,5 @@ const mapStateToProps = (state) => ({
   my_channels: state.Reducer.my_channels,
 });
 
-export default connect(mapStateToProps, { get_my_channels })(RightPanel);
+export default connect(mapStateToProps, { get_my_channels })(MobileAddchannel);
+
