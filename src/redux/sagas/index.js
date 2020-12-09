@@ -21,7 +21,7 @@ import {
   SHOW_MY_CHANNELS_MOBILE,
 } from "../types";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://youngstars-server.herokuapp.com";
 
 export const storeTokenLocalstorage = (token) => {
   localStorage.setItem("token", token);
@@ -151,6 +151,7 @@ export function* add_channel_worker({ payload }) {
     const json = yield response.json()
     if(json.message && json.data.nModified === 1) {
         yield put({type:ADD_TO_CHANNEL_SUCCESS, payload:"successfully added"})
+        yield setTimeout(() => window.location.reload(), 4000)
     }
     else if(json.code == 500) {
         yield put({type:ADD_TO_CHANNEL_FAILURE, payload:"Duplicate Subscriptions"})
